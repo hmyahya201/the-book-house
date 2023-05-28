@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { BoltIcon, Bars3BottomRightIcon, XMarkIcon} from '@heroicons/react/24/solid'
 import { Link, NavLink } from 'react-router-dom';
+import { ShoppingCartIcon } from '@heroicons/react/24/solid'
+
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,6 +20,7 @@ const Header = () => {
                     <NavLink className={({isActive})=>isActive?"active": ""} to="/">Home</NavLink>
                     <NavLink className={({isActive})=>isActive?"active": ""} to="/books">Books</NavLink>
                     <NavLink className={({isActive})=>isActive?"active": ""} to="/about">About Us</NavLink>
+                    <Link className='relative'><ShoppingCartIcon className='w-6 h-6 text-gray-400 '/><span className='absolute -top-3 right-0 text-blue-600 font-bold text-xl'>0</span></Link>
                 </div>
                 <div className='md:hidden' onClick={()=>setIsMenuOpen(!isMenuOpen)}>
                    <span>{isMenuOpen?<XMarkIcon className='w-6 h-6' />:<Bars3BottomRightIcon className='w-6 h-6'/>}</span>

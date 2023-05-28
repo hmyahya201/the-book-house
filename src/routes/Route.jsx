@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home";
 import Books from './../pages/Books/Books';
 import About from "../pages/About/About";
 import BookDetails from './../components/BookDetails/BookDetails';
+import WrongPage from "../pages/WrongPage/WrongPage";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
             {
                 path: "/about",
                 element: <About></About>
+            },
+            {
+                path: "/*",
+                element: <WrongPage></WrongPage>
             },
             {
                 path: "/book/:id",
