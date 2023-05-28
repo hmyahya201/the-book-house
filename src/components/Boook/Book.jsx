@@ -7,7 +7,7 @@ const Book = ({book}) => {
     const {image, price, title, subtitle, isbn13} = book    
         return (
         <Link to={`/book/${isbn13}`}>
-            <div className='relative shadow-md hover:shadow-2xl duration-300 grid place-items-center'>
+            <div className='relative shadow-md hover:shadow-2xl duration-300 grid place-items-center transition transform hover:-translate-y-2'>
                 <div>
                     <img src={image} alt="book-cover" />
                 </div>
