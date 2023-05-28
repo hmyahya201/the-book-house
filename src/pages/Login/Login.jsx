@@ -6,7 +6,7 @@ const Login = () => {
     return (
         <div className="container mx-auto px-5 h-screen mt-8">
             <form className='border shadow-sm w-full md:w-4/6 mx-auto p-10'>
-                <h2 className='text-center text-black font-semibold text-4xl mb-5'>Please Register!!!</h2>
+                <h2 className='text-center text-black font-semibold text-4xl mb-5'>Please Login!!!</h2>
                 <div className='mb-5'>
                     <label className='block mb-2 text-xl text-gray-600 cursor-pointer' htmlFor="email">Email</label>
                     <input type="email" placeholder="Enter Your Email" id="email" className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
