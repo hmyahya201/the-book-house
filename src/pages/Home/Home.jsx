@@ -7,7 +7,7 @@ import { ShoppingCartIcon } from '@heroicons/react/24/solid';
 
 const Home = () => {
     return (
-        <div className='container mx-auto flex flex-col gap-8 xl:gap-14 justify-between lg:flex-row lg:items-center xl:items-center p-5'>
+        <div className='container mx-auto flex flex-col gap-8 xl:gap-14 justify-between lg:flex-row lg:items-center xl:items-center p-5 h-screen'>
             <div className='lg:w-1/2 xl:w-7/12'>
                 <div className='max-w-xl mb-6'>
                   <div>
