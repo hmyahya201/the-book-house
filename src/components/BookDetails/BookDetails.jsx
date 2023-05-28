@@ -17,7 +17,7 @@ const BookDetails = () => {
 
     return (
         <div className='container mx-auto p-5'>
-            <div className='flex flex-col max-w-screen-lg overflow-hidden bg-white border rounded shadow-sm lg:flex-row sm:mx-auto'>
+            <div className='flex flex-col max-w-screen-lg overflow-hidden bg-white border rounded shadow-sm lg:flex-row lg:items-center sm:mx-auto'>
                 {/* Image Container */}
                 <div className=' lg:w-1/2 h-full'>
                     <img

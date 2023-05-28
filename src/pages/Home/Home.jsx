@@ -1,11 +1,17 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigation } from 'react-router-dom';
 import Lottie from 'lottie-react'
 import reader from '../../assets/reading-boy.json'
 import { ShoppingCartIcon } from '@heroicons/react/24/solid';
+import LoaderSpinner from '../../components/LoaderSpinner/LoaderSpinner';
 
 const Home = () => {
+  const navigation = useNavigation();
+    console.log(navigation.state)
+    if(navigation.state==="loading"){
+        return <LoaderSpinner/>
+    }
     return (
         <div className='container mx-auto flex flex-col gap-8 xl:gap-14 justify-between lg:flex-row lg:items-center xl:items-center p-5 h-screen'>
             <div className='lg:w-1/2 xl:w-7/12'>
