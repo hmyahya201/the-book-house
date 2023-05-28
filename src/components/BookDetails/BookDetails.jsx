@@ -1,12 +1,20 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useNavigation } from 'react-router-dom';
+import LoaderSpinner from '../LoaderSpinner/LoaderSpinner';
+
 
 const BookDetails = () => {
+    const navigation = useNavigation();
+    console.log(navigation.state)
+    if(navigation.state==="loading"){
+        return <LoaderSpinner />
+    }
     const book = useLoaderData();
     const [fold, setFold] = useState(true)
     const { image, title, desc, authors, publisher, year, rating, url, price } = book
-    console.log(book)
+
     return (
         <div className='container mx-auto p-5'>
             <div className='flex flex-col max-w-screen-lg overflow-hidden bg-white border rounded shadow-sm lg:flex-row sm:mx-auto'>

@@ -1,9 +1,16 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigation} from 'react-router-dom';
 import Book from '../../components/Boook/Book';
+import LoaderSpinner from '../../components/LoaderSpinner/LoaderSpinner';
 
 const Books = () => {
+    const navigation = useNavigation();
+    console.log(navigation.state)
+    if(navigation.state==="loading"){
+        return <LoaderSpinner/>
+    }
     const data = useLoaderData();
     const books = data.books;
     return (
