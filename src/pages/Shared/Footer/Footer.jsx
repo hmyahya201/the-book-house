@@ -3,9 +3,11 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div>
-            <p className='text-center'><small>All copyright reserved by hmyahya</small></p>
-        </div>
+        <footer className='px-4 text-gray-800 relative bottom-0 left-0'>
+            <div className='py-6 text-sm text-center text-gray-400'>
+            © 2023 the-book-house. All rights reserved by hm yahya.
+            </div>
+        </footer>
     );
 };
 
