@@ -7,7 +7,6 @@ import LoaderSpinner from '../LoaderSpinner/LoaderSpinner';
 
 const BookDetails = () => {
     const navigation = useNavigation();
-    console.log(navigation.state)
     if(navigation.state==="loading"){
         return <LoaderSpinner />
     }

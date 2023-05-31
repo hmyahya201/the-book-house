@@ -1,11 +1,15 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../probiders/AuthProviders';
 import google from '../../assets/img/google.png'
 
 const Login = () => {
     const {loginUser, loginWithGoogle} = useContext(AuthContext);
+    const location = useLocation()
+    console.log(location)
+    const navigate = useNavigate()
+    const from = location?.state?.from?.pathname // "/";
 
     const handleGoogleLogin = ()=>{
         loginWithGoogle()
@@ -21,9 +25,9 @@ const Login = () => {
             loginUser(email, password)
             .then(result=>{
                 const loggedUser = result.user;
-                console.log(loggedUser)
                 form.reset()
                 alert("login success")
+                navigate(from,  {replace: true})
             })
             .catch(error=>{
                 console.log(error.message)
