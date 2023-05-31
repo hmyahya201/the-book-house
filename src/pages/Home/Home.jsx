@@ -13,7 +13,7 @@ const Home = () => {
         return <LoaderSpinner/>
     }
     return (
-        <div className='container mx-auto flex flex-col gap-8 xl:gap-14 justify-between lg:flex-row lg:items-center xl:items-center p-5 h-screen'>
+        <div className='container mx-auto flex flex-col sm:gap-4 gap-8 xl:gap-14 justify-between lg:flex-row lg:items-center xl:items-center p-5 h-screen'>
             <div className='lg:w-1/2 xl:w-7/12'>
                 <div className='max-w-xl mb-6'>
                   <div>
