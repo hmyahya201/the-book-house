@@ -1,12 +1,17 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { BoltIcon, Bars3BottomRightIcon, XMarkIcon} from '@heroicons/react/24/solid'
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useParams } from 'react-router-dom';
 import { ShoppingCartIcon } from '@heroicons/react/24/solid'
+import { AuthContext } from '../../../probiders/AuthProviders';
 
 
 const Header = () => {
+    const {user, logOutUser} = useContext(AuthContext);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const handleLogOut = ()=>{
+        logOutUser()
+    }
     return (
       <header className='bg-gray-100 relative z-10'>
             <nav className='flex items-center justify-between container mx-auto p-4'>
@@ -21,7 +26,9 @@ const Header = () => {
                     <NavLink className={({isActive})=>isActive?"active": ""} to="/books">Books</NavLink>
                     <NavLink className={({isActive})=>isActive?"active": ""} to="/about">About Us</NavLink>
                     <Link className='relative'><ShoppingCartIcon className='w-6 h-6 text-gray-400 '/><span className='absolute -top-3 right-0 text-blue-600 font-bold text-xl'>0</span></Link>
-                    <NavLink className={({isActive})=>isActive?"active": ""} to="/login">Login</NavLink>
+                    {
+                        user?<button onClick={handleLogOut}>Log Out</button> :<NavLink className={({isActive})=>isActive?"active": ""} to="/login">Login</NavLink>
+                    }
                 </div>
                 <div className='md:hidden' onClick={()=>setIsMenuOpen(!isMenuOpen)}>
                    <span>{isMenuOpen?<XMarkIcon className='w-6 h-6' />:<Bars3BottomRightIcon className='w-6 h-6'/>}</span>

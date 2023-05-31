@@ -7,6 +7,7 @@ import BookDetails from './../components/BookDetails/BookDetails';
 import WrongPage from "../pages/WrongPage/WrongPage";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/book/:id",
-                element: <BookDetails></BookDetails>,
+                element: <PrivateRoute><BookDetails></BookDetails></PrivateRoute>,
                 loader: ({params})=>fetch(`https://api.itbook.store/1.0/books/${params.id}`)
             },
         ]
